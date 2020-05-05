@@ -1,0 +1,257 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background: #ecf0f1;
+  margin:0;
+  width:100%;
+  font-family: 'Raleway';
+}
+
+#modal {
+  max-width: 100%;
+  display: none;
+  margin:0;
+  height:100vh;
+  font-family:'Raleway';
+ 
+    -webkit-animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    -webkit-transform: translateY(1000px);
+            transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+h1 {
+  color: #8e44ad;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  margin:auto;
+  text-align:center;
+  margin-top:30px;
+}
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+  font-size: 0.75em;
+  color: #8e44ad;
+  top: -2.25rem;
+  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+}
+
+.styled-input {
+  float: left;
+  width:50%;
+  margin: 2rem 0 1rem;
+  position: relative;
+}
+
+.styled-input label {
+  color: #999;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.25s cubic-bezier(0.2, 0, 0.03, 1);
+  pointer-events: none;
+}
+.styled-input.wide {
+  width: 100%;
+}
+
+input, textarea {
+  padding: 1rem 1rem;
+  border: 0;
+  width: 100%;
+  font-size: 1rem;
+}
+input ~ span, textarea ~ span {
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #8e44ad;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+}
+input:focus, textarea:focus {
+  outline: 0;
+}
+input:focus ~ span, textarea:focus ~ span {
+  width: 100%;
+  -webkit-transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+  transition: all 0.125s cubic-bezier(0.2, 0, 0.03, 1);
+}
+
+textarea {
+  width: 100%;
+  display:block;
+  min-height: 15em;
+  margin:auto;
+}
+
+#app {
+    
+    width:100%;
+    height:100vh;
+    font-family:'Raleway';
+    color:#fff;
+    text-align:center;
+    display:flex;
+    background:url("https://raw.githubusercontent.com/abhiprojectz/corona-wish/master/src/3571325.jpg");
+    background-size:cover;
+}
+
+#app .content {
+    width:100%;
+    margin:auto;
+    display:block;
+    position:middle ;
+}
+
+#app h2 {
+    color:#fff;
+    font-size:22;
+    margin:15px;
+    font-weight:900;
+    margin:auto;
+}
+
+
+#app p {
+    margin:auto;
+    margin-top:20px;
+}
+
+
+
+
+button {
+  display: block;
+  height: 50px;
+  width: 186px;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  margin:auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-top:30px;
+  margin-bottom:30px;
+  font-weight:900;
+  border-radius:15px;
+  outline: none;
+  color: white;
+  font-size: 16px;
+  background: linear-gradient(45deg, #3bade3 0%, #576fe6 25%, #9844b7 51%, #ff357f 100%);
+  text-align: center;
+}
+
+.out {
+    -webkit-animation: slide-out-top 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+            animation: slide-out-top 3s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+
+@-webkit-keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
+@keyframes slide-out-top {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-1000px);
+            transform: translateY(-1000px);
+    opacity: 0;
+  }
+}
+
+
+
+#output {
+    background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+    width:100%;
+    height:100vh;
+    display:none;
+    flex-direction:column;
+           animation: slide-in-bottom 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    color:#fff;
+}
+
+
+#output p,input {
+    
+    margin:auto;
+    position:center;
+    font-weight:900;
+    text-align:center;
+    display:block;
+    font-size:18px;
+    margin-top:20px;
+}
+
+#tool {
+    display:flex;
+    width:100%;
+}
+
+#tool input {
+    
+    width:80%;
+    margin:0 auto;
+}
+
+#tool svg {
+    
+    width:20%;
+    float:right;
+    margin:auto;
+}
+
+a {
+    color:#fff;
+    font-weight:900;
+    text-decoration:none;
+}
+
+

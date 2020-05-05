@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="app.css"></link>
+        <title>Corona wish!</title>
+    </head>
+    <body>
+          <div id="app">
+        <div class="content">
+        <h2>Hi welcome, <p id="name"></p> </h1>
+        <br /><br />
+        <p>Hope you are well in this pandemic, Stay safe & healthy. Spend time with your family & friends</p>
+        
+       With best regards , yours <p id="sname"></p> conveying you <p id="message"></p>!
+       
+        <br /><br />
+  <p>Slide down <svg width="34" height="34" viewBox="0 0 24 24"> <path d="M11,4H13V16L18.5,10.5L19.92,11.92L12,19.84L4.08,11.92L5.5,10.5L11,16V4Z" /> </svg></p>
+  
+
+    </div>
+    </div>
+
+    <div id="info">
+        <p>Want to share a corona safe message to someone?</p>
+        <br />
+        <p>
+        Then visit! => <button><a href="">Yes! tap me.</a></button>
+    </div>
+        <div id="footer">
+            <p>©Made by Abhi || 2020</p>
+        </div>
+    </body>
+    
+    <script>
+        
+        document.onload = function () {
+        let params = (new URL(document.location)).searchParams;
+        
+let str = params.get('n');
+
+if (str === "") {
+
+    alert("Invalid link try again!");
+
+  
+  }else {
+      
+      var uurl = 'https://www.jsonstore.io/bda97d062f76f1cc6b4933e0a65bf0d30a196a7390e3f98c02ca2d75d1e3480d/wishes/' + str;
+
+
+
+  $.ajax({
+    url: uurl,
+    success: function (data) {
+    
+    var text = JSON.stringify(data);
+    
+    
+    
+    var read = JSON.parse(text);
+    
+    var rread = read.result;
+    
+    var last = rread.user;
+    
+    
+    alert(last);
+    alert(rread.name)
+    alert(rread.message)
+    
+    $("#sname").val(rread.user);
+    $("#name").val(rread.name);
+    $("#message").val(rread.message);
+    
+    
+    
+   
+    }
+  });
+  }
+}
+
+    </script>
+</html>
